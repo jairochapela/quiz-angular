@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
   title = 'quiz';
 
   preguntas = [
@@ -20,5 +21,11 @@ export class AppComponent {
       correcta: 3
     },
     // más preguntas aquí
-  ]
+  ];
+
+  preguntaActual = undefined;
+
+  ngOnInit(): void {
+    this.preguntaActual = this.preguntas[0];
+  }
 }

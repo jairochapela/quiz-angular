@@ -1,5 +1,2 @@
-<app-pregunta></app-pregunta>
-<app-respuesta></app-respuesta>
-<app-respuesta></app-respuesta>
-<app-respuesta></app-respuesta>
-<app-respuesta></app-respuesta>
+<app-pregunta [titulo]="preguntaActual.pregunta"></app-pregunta>
+<app-respuesta *ngFor="let respuesta of preguntaActual.respuestas" [texto]="respuesta"></app-respuesta>
