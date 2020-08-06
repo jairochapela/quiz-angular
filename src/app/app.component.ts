@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'quiz';
+
+  preguntas = [
+    {
+      pregunta: "¿De qué color es el caballo blanco de Santiago?",
+      respuestas: [
+        "Blanco",
+        "Verde",
+        "Azul",
+        "Isabelino"
+      ],
+      correcta: 3
+    },
+    // más preguntas aquí
+  ]
 }
