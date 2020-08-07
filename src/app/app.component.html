@@ -1,17 +1,20 @@
-<div>Score: {{aciertos}}</div>
+<nav class="navbar">Score: {{aciertos}}</nav>
 
 <div *ngIf="!finDeJuego">
     <app-pregunta [titulo]="preguntaActual.pregunta"></app-pregunta>
     
-    <app-respuesta
-        *ngFor="let respuesta of preguntaActual.respuestas; let i = index" 
-        (seleccion)="marcarRespuesta($event)"
-        [color]="colores[i]"
-        [opcion]="i"
-        [texto]="respuesta">
-    </app-respuesta>
+    <div class="row">
+        <app-respuesta
+            class="col-6"
+            *ngFor="let respuesta of preguntaActual.respuestas; let i = index" 
+            (seleccion)="marcarRespuesta($event)"
+            [color]="colores[i]"
+            [opcion]="i"
+            [texto]="respuesta">
+        </app-respuesta>
+    </div>
 </div>
 
-<div *ngIf="finDeJuego">
+<div class="jumbotron" *ngIf="finDeJuego">
     <h1>Game Over!</h1>
 </div>
