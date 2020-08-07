@@ -3,6 +3,7 @@
 <div *ngIf="!finDeJuego">
     <app-pregunta [titulo]="preguntaActual.pregunta"></app-pregunta>
     
+   
     <div class="row">
         <app-respuesta
             class="col-6"
@@ -13,6 +14,7 @@
             [texto]="respuesta">
         </app-respuesta>
     </div>
+
 </div>
 
 <div class="jumbotron" *ngIf="finDeJuego">
