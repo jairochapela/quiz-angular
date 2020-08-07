@@ -9,10 +9,16 @@ export class RespuestaComponent implements OnInit {
 
   @Input()
   texto : string = "";
+
+  @Input()
+  opcion : number;
+
+  @Input()
+  color : string;
   
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() : void {
   }
 
 }
