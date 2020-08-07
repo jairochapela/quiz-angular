@@ -53,6 +53,7 @@ export class AppComponent implements OnInit {
       this.preguntaActual = this.preguntas[this.contador];
     } else {
       alert("Fin del juego");
+      this.finDeJuego = true;
     }
   }
 
