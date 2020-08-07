@@ -7,6 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
+  /**
+   * Esta variable contendrá la pregunta que se estará mostrando en
+   * pantalla.
+   */
+  preguntaActual = undefined;
+
+
+  /**
+   * En el momento de cargar el componente, se elegirá una pregunta a
+   * mostrar de entre todas las disponibles en preguntas.
+   */
+  ngOnInit(): void {
+    this.preguntaActual = this.preguntas[0];
+  }
+
   title = 'quiz';
 
   preguntas = [
@@ -20,12 +35,18 @@ export class AppComponent implements OnInit {
       ],
       correcta: 3
     },
+    {
+      pregunta: "¿En qué año se celebraron los JJ.OO. de Tokio 2020?",
+      respuestas: [
+        "2020",
+        "2021",
+        "Antes que los JJ.OO. de Madrid",
+        "Después de los JJ.OO. de Madrid"
+      ],
+      correcta: 1
+    }
     // más preguntas aquí
   ];
 
-  preguntaActual = undefined;
 
-  ngOnInit(): void {
-    this.preguntaActual = this.preguntas[0];
-  }
 }

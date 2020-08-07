@@ -1,2 +1,12 @@
 <app-pregunta [titulo]="preguntaActual.pregunta"></app-pregunta>
-<app-respuesta *ngFor="let respuesta of preguntaActual.respuestas" [texto]="respuesta"></app-respuesta>
+
+<app-respuesta
+    *ngFor="let respuesta of preguntaActual.respuestas" 
+    [texto]="respuesta">
+</app-respuesta>
+
+<!-- <app-respuesta [texto]="preguntaActual.respuestas[0]"></app-respuesta>
+<app-respuesta [texto]="preguntaActual.respuestas[1]"></app-respuesta>
+<app-respuesta [texto]="preguntaActual.respuestas[2]"></app-respuesta>
+<app-respuesta [texto]="preguntaActual.respuestas[3]"></app-respuesta>
+-->
