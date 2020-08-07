@@ -14,9 +14,48 @@ export class AppComponent implements OnInit {
   preguntaActual = undefined;
 
   /**
+   * Contador de pregunta.
+   */
+  contador = 0;
+
+  /**
+   * Contador de aciertos.
+   */
+  aciertos = 0;
+
+  /**
+   * Indica que hemos llegado al final del juego. Si vale false, es que
+   * estamos jugando; si es true, fin del juego.
+   */
+  finDeJuego = false;
+
+  /**
    * Colores para los botones.
    */
   colores = ["red", "blue", "yellow", "green"];
+
+  /**
+   * Acción de marcar una respuesta. Si la opción marcada coincide con
+   * la opción correcta de la pregunta actual, aparecerá un mensaje indicando
+   * que se ha respondido correctamente.
+   * @param opcion Opción marcada, de 0 a 3
+   */
+  marcarRespuesta(opcion) {
+    if (opcion == this.preguntaActual.correcta) {
+      this.aciertos++;
+      alert("Correcto!")
+    } else {
+      alert("Has fallado.")
+    }
+
+    this.contador++;
+    if (this.contador < this.preguntas.length) {
+      this.preguntaActual = this.preguntas[this.contador];
+    } else {
+      alert("Fin del juego");
+    }
+  }
+
 
   /**
    * En el momento de cargar el componente, se elegirá una pregunta a

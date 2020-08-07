@@ -1,14 +1,11 @@
+<div>Score: {{aciertos}}</div>
+
 <app-pregunta [titulo]="preguntaActual.pregunta"></app-pregunta>
 
 <app-respuesta
     *ngFor="let respuesta of preguntaActual.respuestas; let i = index" 
+    (seleccion)="marcarRespuesta($event)"
     [color]="colores[i]"
     [opcion]="i"
     [texto]="respuesta">
 </app-respuesta>
-
-<!-- <app-respuesta [texto]="preguntaActual.respuestas[0]"></app-respuesta>
-<app-respuesta [texto]="preguntaActual.respuestas[1]"></app-respuesta>
-<app-respuesta [texto]="preguntaActual.respuestas[2]"></app-respuesta>
-<app-respuesta [texto]="preguntaActual.respuestas[3]"></app-respuesta>
--->
